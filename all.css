@@ -1,0 +1,1442 @@
+:root {
+  --gray-000: #f8f9fa;
+  --gray-100: #f1f3f5;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #868e96;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --red: #fa5252;
+  --pink: #e64980;
+  --grape: #be4bdb;
+  --purple: #7950f2;
+  --indigo: #4c6ef5;
+  --blue: #228be6;
+  --cyan: #15aabf;
+  --teal: #12b886;
+  --green: #40c057;
+  --yellow: #fab005;
+  --orange: #fd7e14;
+  --blue-300: #74c0fc;
+  --blue-400: #4dabf7;
+  --yellow-100: #fff3bf;
+  --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --body-font-size: 16px;
+  --body-line-height: 1.5;
+  --body-color: var(--gray-800);
+  --body-bg: #fff;
+  --link-color: #1c69ac;
+  --link-hover-color: #1c7ed6;
+  --sidenote-color:  var(--gray-700);
+  --sidenote-link-color:  #436786;
+  --heading-color: var(--gray-900);
+  --border-color: var(--gray-300);
+  --border-radius: .25rem;
+  --code-font: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --code-color: var(--grape);
+  --code-bg: var(--gray-000);
+  --spacer: 0.7rem;
+  --spacer-2: calc(var(--spacer) * 1.5);
+  --spacer-3: calc(var(--spacer) * 3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-color: var(--gray-300);
+    --body-bg: var(--gray-800);
+    --heading-color: #fff;
+    --link-color: var(--blue-300);
+    --link-hover-color: var(--blue-400);
+    --border-color: rgba(255,255,255,.15);
+    --code-bg: var(--gray-900);
+
+    --sidenote-color:  var(--gray-400);
+    --sidenote-link-color:  #77b4e9;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  line-height: var(--body-line-height);
+  color: var(--body-color);
+  background-color: var(--body-bg);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover, a:focus {
+  color: var(--link-hover-color);
+}
+
+a strong {
+  color: inherit;
+}
+
+details {
+  padding: 0.5rem;
+  border: 1px solid var(--gray-600);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--heading-color);
+}
+
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+
+h4, h5, h6 {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+} */
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: .5rem;
+}
+
+hr {
+  position: relative;
+  margin: var(--spacer-2) 0;
+  border: 0;
+  border-top: 1px solid var(--border-color);
+}
+
+abbr {
+  font-size: 85%;
+  font-weight: bold;
+  color: var(--gray-600);
+  text-transform: uppercase;
+}
+
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted var(--border-color);
+}
+
+blockquote {
+  padding: .5rem 1rem;
+  margin: .8rem 0;
+  color: var(--gray-500);
+  border-left: 0.25rem solid var(--border-color);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 30em) {
+  blockquote {
+    padding-right: 5rem;
+    padding-left: 1.25rem;
+  }
+}
+
+header .featured_image {
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+article .entry-content img:not(.custom_sized) {
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
+  font-style: italic;
+  text-align: center;
+  color: var(--gray-600);
+}
+
+@media (prefers-color-scheme: dark) {
+  article img.dark_mode_white_border {
+    border: 1em solid white;
+  }
+}
+
+#content {
+  min-height: 30em;
+}
+
+.highlight {
+  padding: var(--spacer);
+  margin-bottom: var(--spacer);
+  background-color: var(--code-bg);
+  border-radius: var(--border-radius);
+}
+
+.highlight pre {
+  margin-bottom: 0;
+}
+
+.highlight .highlight {
+  padding: 0;
+}
+
+.rouge-table {
+  margin-bottom: 0;
+  font-size: 100%;
+}
+
+.rouge-table,
+.rouge-table td,
+.rouge-table th {
+  border: 0;
+}
+
+.rouge-table .gutter {
+  vertical-align: top;
+  user-select: none;
+  opacity: .25;
+}
+
+.gist .markdown-body {
+  padding: 15px !important;
+}
+
+.container_inner {
+  max-width: 45em;
+  padding-left: var(--spacer-2);
+  padding-right: var(--spacer-2);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 72em) and (max-width: 99em) {
+  .has_sidebar .container_inner {
+    max-width: 45em;
+    padding-left: var(--spacer-2);
+    padding-right: var(--spacer-2);
+    margin-left: auto;
+    margin-right: 27em;
+  }
+}
+
+@media (min-width: 65em) and (max-width: 72em) {
+  .has_sidebar .container_inner {
+    max-width: 45em;
+    padding-left: var(--spacer-2);
+    padding-right: var(--spacer-2);
+    margin-left: auto;
+    margin-right: 20em;
+  }
+}
+
+.masthead {
+  padding-top: var(--spacer);
+  padding-bottom: var(--spacer);
+}
+
+.masthead a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.masthead a:hover {
+  text-decoration: underline;
+}
+
+.masthead .masthead-title {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.masthead .masthead-title a {
+  font-size: 1.2em;
+}
+
+.masthead nav.menu {
+  display: inline-block;
+}
+
+.masthead nav.menu ul {
+  display: inline-block;
+  margin-left: 0;
+  font-weight: 400;
+}
+
+.masthead nav.menu ul li {
+  display: inline-block;
+  opacity: .7;
+}
+
+.masthead nav.menu ul li:not(:last-child) {
+  margin-right: 1em;
+}
+
+.page,
+.post {
+  margin-bottom: 2em;
+}
+
+.page li + li,
+.post li + li {
+  margin-top: .25rem;
+}
+
+.page-title,
+.post-title {
+  color: var(--heading-color);
+}
+
+.page-title,
+.post-title {
+  margin-top: 0;
+}
+
+.post-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-title a:hover, .post-title a:focus {
+  text-decoration: underline;
+}
+
+.post-date {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: var(--spacer);
+  color: var(--gray-600);
+}
+
+.entry-summary {
+  font-style: italic;
+}
+
+.related {
+  padding-top: var(--spacer-2);
+  padding-bottom: var(--spacer-2);
+  margin-bottom: var(--spacer-2);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.related-posts {
+  padding-left: 0;
+  list-style: none;
+}
+
+.related-posts h3 {
+  margin-top: 0;
+}
+
+.related-posts a {
+  text-decoration: none;
+}
+
+.related-posts a small {
+  color: var(--gray-600);
+}
+
+.pagination {
+  display: flex;
+  margin: 0 -1.5rem var(--spacer);
+  color: var(--gray-500);
+  text-align: center;
+}
+
+.pagination-item {
+  display: block;
+  padding: var(--spacer);
+  text-decoration: none;
+  border: solid var(--border-color);
+  border-width: 1px 0;
+}
+
+.pagination-item:first-child {
+  margin-bottom: -1px;
+}
+
+a.pagination-item:hover {
+  background-color: var(--border-color);
+}
+
+article header {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 30em) {
+  .pagination {
+    margin: var(--spacer-3) 0;
+  }
+  .pagination-item {
+    float: left;
+    width: 50%;
+    border-width: 1px;
+  }
+  .pagination-item:first-child {
+    margin-bottom: 0;
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+  }
+  .pagination-item:last-child {
+    margin-left: -1px;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+}
+
+.message {
+  padding: var(--spacer);
+  margin-bottom: var(--spacer);
+  color: var(--gray-900);
+  background-color: var(--yellow-100);
+  border-radius: var(--border-radius);
+}
+
+#markdown-toc {
+  padding: var(--spacer-2) var(--spacer-3);
+  margin-bottom: var(--spacer-2);
+  border: solid var(--border-color);
+  border-width: 1px 0;
+}
+
+#markdown-toc::before {
+  display: block;
+  margin-left: calc(var(--spacer-3) * -1);
+  content: "Contents";
+  font-size: 85%;
+  font-weight: 500;
+}
+
+footer {
+  margin-top: var(--spacer-3);
+  margin-bottom: var(--spacer-3);
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .icon {
+  padding-right: 0.5em;
+}
+
+footer .row {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 500px) {
+  footer .row {
+    flex-flow: row;
+  }
+  footer .row .col {
+    display: inline-block;
+  }
+  footer .row .col.r {
+    text-align: right;
+  }
+}
+
+.flexfill {
+  display: flex;
+  flex-flow: column;
+}
+
+@media (min-width: 500px) {
+  .flexfill {
+    flex-flow: row;
+    justify-content: space-between;
+  }
+  .flexfill > .grow {
+    flex-grow: 1;
+  }
+}
+
+.profile-pic {
+  width: 15em;
+  max-width: 40vw;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  aspect-ratio: 1.0;
+  float: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.highlight-entry {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.highlight-entry .teaser {
+  width: 10em;
+  margin-right: 1em;
+  margin-top: 2rem;
+  flex-shrink: 0;
+}
+
+.highlight-entry .teaser img {
+  object-fit: contain;
+  object-position: center top;
+  width: 100%;
+}
+
+.highlight-entry .teaser img.force-square {
+  object-fit: cover;
+  height: 10em;
+}
+
+.highlight-entry .teaser img.force-3-4 {
+  object-fit: cover;
+  height: 7.5em;
+}
+
+.highlight-entry .info {
+  opacity: 0.7;
+}
+
+.highlight-entry .description {
+  margin-top: 0.5em;
+}
+
+.cv-item {
+  padding-left: 1.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.cv-item .title {
+  font-weight: bold;
+}
+
+.cv-item .info {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+hr.double {
+  border-top: 3px solid var(--border-color);
+}
+
+.MJXc-display.mjx-chtml {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+/* Excerpted from the nikola "base" theme. */
+/*
+	Copyright © 2014-2021 Daniel Aleksandersen and others.
+	Permission is hereby granted, free of charge, to any
+	person obtaining a copy of this software and associated
+	documentation files (the "Software"), to deal in the
+	Software without restriction, including without limitation
+	the rights to use, copy, modify, merge, publish,
+	distribute, sublicense, and/or sell copies of the
+	Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+	The above copyright notice and this permission notice
+	shall be included in all copies or substantial portions of
+	the Software.
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+	KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+	WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+	PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+	OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+	OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+.pager,
+.pager li {
+	list-style: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+/* Post and archive pagers */
+.postindexpager .pager .next:before {
+	content: "↓ ";
+}
+.postindexpager .pager .previous:before,
+.archivenav .pager .up:before {
+	content: "↑ ";
+}
+.postpromonav .pager .next:after,
+.archivenav .pager .next:after {
+	content: " →";
+}
+html[dir="rtl"] .postpromonav .pager .previous:after,
+html[dir="rtl"] .archivenav .pager .previous:after {
+	content: " →";
+}
+.postpromonav .pager .previous:before,
+.archivenav .pager .previous:before {
+	content: "← ";
+}
+html[dir="rtl"] .postpromonav .pager .next:before,
+html[dir="rtl"] .archivenav .pager .next:before {
+	content: "← ";
+}
+html[dir="rtl"] .postpromonav .pager .next:after,
+html[dir="rtl"] .archivenav .pager .next:after,
+html[dir="rtl"] .postpromonav .pager .previous:before,
+html[dir="rtl"] .archivenav .pager .previous:before {
+	content: "";
+}
+.metadata p:first-of-type:before,
+.postpromonav .tags li:first-of-type:before,
+.translationslist p:first-of-type:before {
+	content: "";
+}
+.postpromonav .pager {
+	clear: both;
+	height: 1em;
+}
+.postpromonav .tags li,
+.postpromonav .pager li,
+.archivenav .pager li {
+	display: inline-block;
+}
+.archivenav .pager {
+	text-align: center
+}
+.postpromonav .pager .next,
+.archivenav .pager .next {
+	float: right;
+}
+html[dir="rtl"] .postpromonav .pager .next,
+html[dir="rtl"] .archivenav .pager .next {
+	float: left;
+}
+
+.postpromonav .pager .previous,
+.archivenav .pager .previous {
+	float: left;
+}
+html[dir="rtl"] .postpromonav .pager .previous,
+html[dir="rtl"] .archivenav .pager .previous {
+	float: right;
+}
+
+.archivenav .pager .disabled,
+.archivenav .pager .disabled a,
+.archivenav .pager .disabled:link {
+	color: #888;
+	cursor: not-allowed;
+}
+
+.metadata p,
+.translationslist p {
+	display: inline;
+}
+
+#brand {
+	font-size: 3em;
+	line-height: 1;
+}
+
+
+/*
+The MIT License (MIT)
+
+Copyright (c) 2023 Daniel Johnson, based on: 2014 Dave Liepmann
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+/* Import ET Book styles
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
+   body {
+    counter-reset: sidenote-counter;
+  }
+
+  /* Sidenotes, margin notes, figures, captions */
+
+  .marginnote {
+    float: right;
+    clear: right;
+    margin-right: -60%;
+    width: 50%;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    line-height: 1.3;
+    vertical-align: baseline;
+    position: relative;
+    color: var(--sidenote-color);
+    font-size: 0.8rem;
+  }
+
+  .marginnote a {
+    color: var(--sidenote-link-color);
+  }
+
+  .marginnote a:hover,
+  .marginnote a:focus {
+    color: var(--link-hover-color);
+  }
+
+  /* .marginnote.sidetoc {
+    font-size: 0.8rem;
+  } */
+  .marginnote.sidetoc li {
+    margin-top: .25rem;
+  }
+  .marginnote.sidetoc .toc>ul>li {
+    list-style: none;
+    margin-top: 1rem;
+  }
+
+  blockquote .marginnote {
+    margin-right: -82%;
+    min-width: 59%;
+    text-align: left;
+  }
+
+  input.margin-toggle {
+    display: none;
+  }
+
+  label.sidenote-number {
+    display: inline-block;
+    max-height: 2rem;
+    /* should be less than or equal to paragraph line-height */
+  }
+
+  .marginnotegroup label.margin-toggle {
+    display: none;
+  }
+
+  .iframe-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+  }
+
+  .iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: 65em) and (max-width: 72em) {
+
+    .marginnote {
+      margin-right: -20em;
+      width: 18em;
+    }
+  }
+
+  @media (max-width: 65em) {
+    .marginnote > p:last-child {
+      margin-bottom: 0;
+    }
+
+    label.margin-toggle {
+      cursor: pointer;
+      color: var(--link-color);
+    }
+    label.margin-toggle:hover {
+      color: var(--link-hover-color);
+    }
+
+    .marginnote {
+      float: none;
+      clear: none;
+      border: none;
+      width: 100%;
+    }
+    .marginnotegroup {
+      width: 95%;
+      margin: 1rem 2.5%;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--gray-400);
+    }
+
+    .marginnotegroup label.margin-toggle {
+      display: block;
+      font-size: 0.8rem;
+    }
+    .marginnotegroup label.margin-toggle[for=table-of-contents] {
+      margin-bottom: 1rem;
+    }
+
+    label.margin-toggle::after {
+      content: " [show]";
+    }
+
+    .margin-toggle:not(:checked) + .marginnote {
+      display: none;
+    }
+    .marginnote {
+      display: block;
+    }
+
+    label.margin-toggle:has(+ .margin-toggle:checked)::after,
+    sup:has(+ .margin-toggle:checked) > label.margin-toggle::after {
+      content: " [hide]";
+    }
+
+  }
+
+/* Generated with https://icomoon.io/app/#/select/font */
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/assets/fonts/icomoon.eot?6o65r8');
+  src:  url('/assets/fonts/icomoon.eot?6o65r8#iefix') format('embedded-opentype'),
+    url('/assets/fonts/icomoon.ttf?6o65r8') format('truetype'),
+    url('/assets/fonts/icomoon.woff?6o65r8') format('woff'),
+    url('/assets/fonts/icomoon.svg?6o65r8#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mastodon:before {
+  content: "\e900";
+}
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-github:before {
+  content: "\f09b";
+}
+.icon-envelope:before {
+  content: "\f0e0";
+}
+
+/* Minimal style sheet for the HTML output of Docutils.                    */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: minimal.css 8642 2021-03-26 13:51:14Z milde $               */
+/* :Copyright: © 2015 Günter Milde.                                        */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+
+/* This CSS2.1_ stylesheet defines rules for Docutils elements without    */
+/* HTML equivalent. It is required to make the document semantic visible. */
+/*                                                                        */
+/* .. _CSS2.1: http://www.w3.org/TR/CSS2                                  */
+/* .. _validates: http://jigsaw.w3.org/css-validator/validator$link       */
+
+/* titles */
+p.topic-title,
+p.admonition-title,
+p.system-message-title {
+  font-weight: bold;
+}
+p.sidebar-title,
+p.rubric {
+  font-weight: bold;
+  font-size: larger;
+}
+p.rubric {
+  color: maroon;
+}
+p.subtitle,
+p.section-subtitle,
+p.sidebar-subtitle {
+  font-weight: bold;
+  margin-top: -0.5em;
+}
+h1 + p.subtitle {
+  font-size: 1.6em;
+}
+h2 + p.section-subtitle, a.toc-backref {
+  color: black;
+  text-decoration: none;
+}
+
+/* Warnings, Errors */
+.system-messages h2,
+.system-message-title,
+span.problematic {
+  color: red;
+}
+
+/* Inline Literals */
+.docutils.literal {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+/* do not wrap at hyphens and similar: */
+.literal > span.pre { white-space: nowrap; }
+
+/* Lists */
+
+/* compact and simple lists: no margin between items */
+.simple  li, .simple  ul, .simple  ol,
+.compact li, .compact ul, .compact ol,
+.simple  > li p, dl.simple  > dd,
+.compact > li p, dl.compact > dd {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Table of Contents */
+.topic.contents { margin: 0.5em 0; }
+.topic.contents ul.auto-toc {
+  list-style-type: none;
+  padding-left: 1.5em;
+}
+
+/* Enumerated Lists */
+ol.arabic     { list-style: decimal }
+ol.loweralpha { list-style: lower-alpha }
+ol.upperalpha { list-style: upper-alpha }
+ol.lowerroman { list-style: lower-roman }
+ol.upperroman { list-style: upper-roman }
+
+/* Definition Lists and Derivatives */
+dt .classifier { font-style: italic }
+dt .classifier:before {
+  font-style: normal;
+  margin: 0.5em;
+  content: ":";
+}
+/* Field Lists and similar */
+/* bold field name, content starts on the same line */
+dl.field-list > dt,
+dl.option-list > dt,
+dl.docinfo > dt,
+dl.footnote > dt,
+dl.citation > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.5em;
+}
+/* Offset for field content (corresponds to the --field-name-limit option) */
+dl.field-list > dd,
+dl.option-list > dd,
+dl.docinfo > dd {
+  margin-left:  9em; /* ca. 14 chars in the test examples, fit all Docinfo fields */
+}
+/* start field-body on a new line after long field names */
+dl.field-list > dd > *:first-child,
+dl.option-list > dd > *:first-child
+{
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
+
+/* Bibliographic Fields (docinfo) */
+dl.docinfo pre.address {
+  font: inherit;
+  margin: 0.5em 0;
+}
+dl.docinfo > dd.authors > p { margin: 0; }
+
+/* Option Lists */
+dl.option-list > dt { font-weight: normal; }
+span.option { white-space: nowrap; }
+
+
+/* Footnotes and Citations  */
+
+.footnote, .citation { margin: 1em 0; } /* default paragraph skip (Firefox) */
+/* hanging indent */
+.citation { padding-left: 2em; }
+.footnote { padding-left: 1.7em; }
+.footnote.superscript { padding-left: 1.0em; }
+.citation > .label { margin-left: -2em; }
+.footnote > .label { margin-left: -1.7em; }
+.footnote.superscript > .label { margin-left: -1.0em; }
+
+.footnote > .label + *,
+.citation > .label + * {
+  display: inline-block;
+  margin-top: 0;
+  vertical-align: top;
+}
+.footnote > .backrefs + *,
+.citation > .backrefs + * {
+  margin-top: 0;
+}
+.footnote > .label + p, .footnote > .backrefs + p,
+.citation > .label + p, .citation > .backrefs + p {
+  display: inline;
+  vertical-align: inherit;
+}
+
+.backrefs { user-select: none; }
+.backrefs > a { font-style: italic; }
+
+/* superscript footnotes */
+a[role="doc-noteref"].superscript,
+.footnote.superscript > .label,
+.footnote.superscript > .backrefs {
+  vertical-align: super;
+  font-size: smaller;
+  line-height: 1;
+}
+a[role="doc-noteref"].superscript > .fn-bracket,
+.footnote.superscript > .label > .fn-bracket {
+  /* hide brackets in display but leave for copy/paste */
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+}
+[role="doc-noteref"].superscript + [role="doc-noteref"].superscript {
+  padding-left: 0.15em; /* separate consecutive footnote references */
+  /* TODO: unfortunately, "+" also selects with text between the references. */
+}
+
+/* Legacy Footnotes and Citations */
+dl.footnote.superscript > dd { margin-left: 1em; }
+dl.footnote.brackets > dd { margin-left: 2em; }
+dl.footnote > dt { font-weight: normal; }
+dt.label > span.brackets:before { content: "["; }
+dt.label > span.brackets:after { content: "]"; }
+a.footnote-reference.superscript,
+dl.footnote.superscript > dt.label {
+  vertical-align: super;
+  font-size: small;
+}
+dt.label > span.fn-backref {
+  margin-left: 0.2em;
+  font-weight: normal;
+}
+dt.label > span.fn-backref > a { font-style: italic; }
+
+/* Alignment */
+.align-left   {
+  text-align: left;
+  margin-right: auto;
+}
+.align-center {
+  clear: both;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.align-right  {
+  text-align: right;
+  margin-left: auto;
+}
+.align-top    { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+
+/* reset inner alignment in figures and tables */
+figure.align-left, figure.align-right,
+table.align-left, table.align-center, table.align-right {
+  text-align: inherit;
+}
+
+/* Text Blocks */
+blockquote,
+div.topic,
+aside.topic {
+  margin: 1em 2em;
+}
+.sidebar,
+.admonition,
+.system-message {
+  border: thin solid;
+  margin: 1em 2em;
+  padding: 0.5em 1em;
+}
+.sidebar {
+  width: 30%;
+  max-width: 26em;
+  float: right;
+  clear: right;
+}
+div.line-block { display: block; }
+div.line-block div.line-block, pre { margin-left: 2em; }
+
+/* Code line numbers: dropped when copying text from the page */
+pre.code .ln { display: none; }
+pre.code code:before {
+  content: attr(data-lineno); /* …, none) fallback not supported by any browser */
+  color: gray;
+}
+
+/* Tables */
+
+td > p:first-child, th > p:first-child { margin-top: 0; }
+td > p, th > p { margin-bottom: 0; }
+
+.borderless td, .borderless th {
+  border: 0;
+  padding: 0;
+  padding-right: 0.5em /* separate table cells */
+}
+
+/* CSS31_ style sheet for the output of Docutils HTML writers.             */
+/* Rules for easy reading and pre-defined style variants.                  */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: plain.css 8636 2021-03-19 00:23:33Z milde $                                                               */
+/* :Copyright: © 2015 Günter Milde.                                        */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+/* .. _CSS3: http://www.w3.org/TR/CSS3                                     */
+
+
+/* Document Structure */
+/* ****************** */
+
+/* Transitions */
+hr.docutils {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+dl > dd {
+  margin-bottom: 0.5em;
+}
+
+/* Lists */
+/* ===== */
+
+/* Separate list entries in compound lists */
+dl > dd, ol > li,
+
+/* Definition Lists */
+/* Indent lists nested in definition lists */
+/* (:only-child is new in CSS 3)           */
+dd > ul:only-child, dd > ol:only-child { padding-left: 1em; }
+
+/* Description Lists */
+/* styled like in most dictionaries, encyclopedias etc. */
+dl.description > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.5em;
+}
+
+/* Field Lists */
+
+/* example for custom field-name width */
+dl.field-list.narrow > dd {
+  margin-left: 5em;
+}
+/* run-in: start field-body on same line after long field names */
+dl.field-list.run-in > dd p {
+  display: block;
+}
+
+/* Bibliographic Fields */
+
+/* generally, bibliographic fields use special definition list dl.docinfo */
+/* but dedication and abstract are placed into "topic" divs */
+div.abstract p.topic-title {
+  text-align: center;
+}
+div.dedication {
+  margin: 2em 5em;
+  text-align: center;
+  font-style: italic;
+}
+div.dedication p.topic-title {
+  font-style: normal;
+}
+
+/* Text Blocks */
+/* =========== */
+
+/* Literal Blocks */
+pre.literal-block, pre.doctest-block,
+pre.math, pre.code {
+  font-family: monospace;
+}
+
+/* Block Quotes */
+blockquote > table,
+div.topic > table {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+blockquote p.attribution,
+div.topic p.attribution {
+  text-align: right;
+  margin-left: 20%;
+}
+
+/* Tables */
+/* ====== */
+
+/* th { vertical-align: bottom; } */
+
+table tr { text-align: left; }
+
+/* "booktabs" style (no vertical lines) */
+table.booktabs {
+  border: 0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.booktabs * {
+  border: 0;
+}
+table.booktabs th {
+  border-bottom: thin solid;
+}
+
+/* numbered tables (counter defined in div.document) */
+table.numbered > caption:before {
+  counter-increment: table;
+  content: "Table " counter(table) ": ";
+  font-weight: bold;
+}
+
+/* Explicit Markup Blocks */
+/* ====================== */
+
+/* Footnotes and Citations */
+/* ----------------------- */
+
+/* line on the left */
+.footnote-list {
+  border-left: solid thin;
+  padding-left: 0.25em;
+}
+
+/* same thing for old docutils versions */
+dl.footnote {
+  padding-left: 1ex;
+  border-left: solid;
+  border-left-width: thin;
+}
+
+/* Directives */
+/* ---------- */
+
+/* Body Elements */
+/* ~~~~~~~~~~~~~ */
+
+/* Images and Figures */
+
+/* let content flow to the side of aligned images and figures */
+figure.align-left,
+img.align-left,
+video.align-left,
+object.align-left {
+  clear: left;
+  float: left;
+  margin-right: 1em;
+}
+figure.align-right,
+img.align-right,
+video.align-right,
+object.align-right {
+  clear: right;
+  float: right;
+  margin-left: 1em;
+}
+
+/* Numbered figures */
+figure.numbered > figcaption > p:before {
+  counter-increment: figure;
+  content: "Figure " counter(figure) ": ";
+  font-weight: bold;
+}
+
+/* Admonitions and System Messages */
+.caution p.admonition-title,
+.attention p.admonition-title,
+.danger p.admonition-title,
+.error p.admonition-title,
+.warning p.admonition-title,
+div.error {
+  color: red;
+}
+
+/* Sidebar */
+/* Move right. In a layout with fixed margins, */
+/* it can be moved into the margin.            */
+aside.sidebar {
+  width: 30%;
+  max-width: 26em;
+  margin-left: 1em;
+  margin-right: -2%;
+  background-color: #ffffee;
+}
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning, div.sidebar,
+div.system-message {
+/* stolen from Boostrap 4 (.card) */
+  margin-bottom: 2rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  color: #212529;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  padding: 0;
+}
+
+div.attention, div.caution, div.danger, div.error, div.warning {
+  /* stolen from Boostrap 3 (.border-danger) */
+  border-color: #dc3545!important;
+}
+
+div.admonition p, div.hint p,
+div.important p, div.note p,
+div.tip p, div.sidebar p,
+div.attention p, div.caution p,
+div.danger p, div.error p,
+div.warning p, div.system-message p {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title, div.sidebar p.sidebar-title,
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, div.system-message p.system-message-title {
+/* stolen from Boostrap 4 (.card .card-header) */
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  background-color: rgba(0,0,0,.03);
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, div.system-message p.system-message-title {
+  /* stolen from Boostrap 4 (.card .card-header .bg-danger) */
+  background-color: #dc3545;
+  color: white;
+}
+
+div.sidebar {
+    margin-right: 0;
+}
+
+/* Improved margin overrides */
+div.topic,
+pre.literal-block,
+pre.doctest-block,
+pre.math,
+pre.code,
+div.code {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+div.code {
+    margin-bottom: 1rem;
+}
