@@ -497,14 +497,14 @@ footer .row {
 .profile-pic {
   width: auto;
   height: auto;
-  max-width: 20em;
+  max-width: 40%;
   margin-left: 1em;
   margin-bottom: 1em;
   float: right;
 }
 
 .pottery-pic {
-  width: 300px;
+  width: 50%;
   height: auto;
   max-width: 50px;
   margin-left: auto;
