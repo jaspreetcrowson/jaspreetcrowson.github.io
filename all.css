@@ -495,12 +495,21 @@ footer .row {
 }
 
 .profile-pic {
-  width: 15em;
-  max-width: 40vw;
+  width: auto;
+  height: auto;
+  max-width: 20em;
   margin-left: 1em;
   margin-bottom: 1em;
-  aspect-ratio: 1.0;
   float: right;
+}
+
+.pottery-pic {
+  width: 300px;
+  height: auto;
+  max-width: 50px;
+  margin-left: auto;
+  margin-bottom: auto;
+  display: block;
 }
 
 .center {
